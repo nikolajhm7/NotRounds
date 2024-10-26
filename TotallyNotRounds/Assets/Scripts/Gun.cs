@@ -90,7 +90,6 @@ public class Gun : MonoBehaviour
     private void Shoot()
     {
         Quaternion rot = Quaternion.Euler(0, 0, spawnPoint.rotation.eulerAngles.z + rotationOffset);
-        //Instantiate(projectileObject, spawnPoint.position, rot).AddComponent<Projectile>().BuildProjectile(2, pMod);
         ProjectileBuilder.Standard(spawnPoint.position, rot).GetComponent<Projectile>().Fire();
 
         reloadLeft = reloadTime;
